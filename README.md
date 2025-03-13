@@ -21,6 +21,31 @@ Applies contrastive learning to align modalities:
 Alignment loss: Lalign = -log(e^s(Shm,Shn)/τ / ∑e^s(Shm,Shk)/τ)
 Preserves relationships between different modalities' shared features
 
+## 3. Language-Guided Attention (LCCA)
+Reinforcement learning optimizes attention weights:
+
+Attention weights: α = softmax(QlangK⊤mod)
+Policy gradient update: ∇J ∝ R · ∇ log π(α|X)
+Dynamically focuses on the most relevant audio/visual features
+
+## 4. Multi-Scale Fusion
+Implements hierarchical processing across multiple linguistic levels:
+
+Ffinal = [CNNword(HL); BiGRUphrase(HL); Transformerutterance(HL)]
+
+## 5. Adversarial Completion
+GAN with language guidance for robust missing data reconstruction:
+
+Generator: Xm_rec = G(Xm_noisy, HL)
+Discriminator detects real/fake features
+Loss: LGAN + λ||Xm - Xm_rec||1
+
+## 6. Cross-Modal Orthogonal Projection
+Ensures separation between shared and specific subspaces:
+
+Minimizes redundancy across modalities
+Enforces orthogonality constraints
+
 # Acknowledgments
 
 ### Thanks to all contributors who have helped with the development of this model
