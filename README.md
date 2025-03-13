@@ -46,6 +46,16 @@ Ensures separation between shared and specific subspaces:
 Minimizes redundancy across modalities
 Enforces orthogonality constraints
 
+## Installation 💻
+
+```bash
+git clone https://github.com/yourusername/EDLFCN.git
+cd EDLFCN
+conda create -n edlfcn python=3.8
+conda activate edlfcn
+pip install -r requirements.txt
+```
+
 # Acknowledgments
 
 ### Thanks to all contributors who have helped with the development of this model
